@@ -1,0 +1,5 @@
+host = "10.12.129.200"
+user = "mdevusr"
+password = "q4828uru99kk"
+database = "welc_dev"
+port = "3306"

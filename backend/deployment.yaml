@@ -1,0 +1,21 @@
+# Kubernetes
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: digitaladmin
+spec:
+  selector:
+    matchLabels:
+      app: digitaladmin
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: digitaladmin
+    spec:
+      containers:
+      - name: digitaladmin
+        image: digitaladmin:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5002

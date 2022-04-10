@@ -1,0 +1,85 @@
+<html>
+<head>
+  <title>Digital Administrator</title>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta content="utf-8" http-equiv="encoding" />
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  
+  <!--Import Font Awesome Icon Font-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <!--Import materialize.css-->
+  <link rel="stylesheet" type="text/css" href="static/css/materialize.min.css" />
+  <!--Main css-->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="container">
+    <!-- Modal for rendering the charts, declare this if you want to render charts, 
+         else you remove the modal -->
+    <div id="modal1" class="modal">
+      <canvas id="modal-chart"></canvas>
+    </div>
+
+    <!--chatbot widget -->
+    <div class="widget" id='chatcontainer'>
+      <div class="chat_header">
+        <div class='chatbot-img'>
+          <img class="bot-img" src="./static/img/logo-wipo.png" />
+          <!--Add the name of the bot here -->
+          <span class="chat_header_title">Digital Administrator<br/><span>WIPO Academy - Distance Learning</span></span>
+          <span class="right-icons expand-trigger" style="font-size: 15px;"><i title="Minimize" id="close" class="fa fa-window-minimize" aria-hidden="true"></i></span>
+          <span class="right-icons expand-trigger" style="font-size: 15px;"><i id="clear" title="Restart" class="fa fa-refresh " aria-hidden="true"></i></span>
+          <span class="right-icons expand-trigger" style="font-size: 15px;"><i title="Expand" id="btnFullscreen" class="fa fa-expand" aria-hidden="true"></i></span>
+        </div>
+      </div>
+      <!--Chatbot contents goes here -->
+      <div class="chats" id="chats">
+        <div class="clearfix"></div>
+      </div>
+      <div class="profile_div2" id="close"></div>
+      <div id='feedbackField' onclick="ButtonClick_feedback()" class="feedback" >Share Feedback</div>
+      <!--keypad for user to type the message -->
+      <div class="keypad">
+        <textarea id="userInput" placeholder="Type a message..." class="usrInput"></textarea>
+        <div id="sendButton">
+          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        </div>
+        <div data-tooltip="Hold to record, release to send" id="sendVoice" onmousedown="mouseDown(), this.className='sendVoice:active'">
+          <i title="" id="start-btn"  class="fa fa-microphone"  aria-hidden="false"></i>
+        </div>
+      </div>
+    </div>
+
+    <!--bot profile-->
+    <div class="profile_div" id="profile_div">
+      <img class="imgProfile" src="static/img/icon-chatbot.svg" />
+      <!-- <div class="overlay">Hi! Do you need some assistance?</div> -->
+   </div>
+
+    <!-- Bot pop-up intro -->
+    <!-- <div class="tap-target" data-target="profile_div">
+    </div> -->
+  </div>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="static/js/lib/materialize.min.js">
+  </script>
+  <script src="static/js/lib/uuid.min.js"></script>
+  <!--Main Script -->
+  <script type="text/javascript" src="static/js/script.js"></script>
+
+  <!--Chart.js Script -->
+  <script type="text/javascript" src="static/js/lib/chart.min.js"></script>
+  <script type="text/javascript" src="static/js/lib/showdown.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+version: "2.0"
+
+stories:
+
+## GENLOGIN
+
+- story: genlogin
+  steps:
+  - intent: greet
+  - action: action_find_greet_1
+  - action: action_find_greet_2
+  - action: action_find_greet_3

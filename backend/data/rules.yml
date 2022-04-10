@@ -1,0 +1,873 @@
+version: "2.0"
+
+rules:
+
+############################################
+##               ALL TOPICS               ##
+############################################
+
+- rule: greet
+  steps: 
+  - intent: greet
+  - action: action_find_greet_1
+  - action: action_find_greet_2
+  - action: action_find_greet_3
+
+- rule: back_action_find_greet_3
+  steps:
+  - intent: back_action_find_greet_3
+  - action: action_find_greet_3
+
+############################################
+##                FEEDBACK                ##
+############################################
+
+- rule: Activate rating form
+  steps: 
+  - intent: Feedback  
+  - action: action_share_feedback_rating
+  - action: rating_form
+  - active_loop: rating_form
+
+- rule: Submit rating form
+  condition:
+  - active_loop: rating_form
+  steps:
+  - action: rating_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_share_feedback_comment
+
+- rule: exit feedback with rating but no comment
+  steps: 
+  - intent: exit_feedback_with_rating
+  - action: action_submit_feedback
+  - action: action_share_feedback_comment_result
+
+- rule: Activate form
+  steps:
+  - intent: share_comment_feedback_yes
+  - action: action_share_feedback_comment_result
+  - action: survey_form
+  - active_loop: survey_form
+
+- rule: Submit form
+  condition:
+  - active_loop: survey_form
+  steps:
+  - action: survey_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_submit_feedback
+  - action: action_share_feedback_final
+
+############################################
+##                 LOGIN                  ##
+############################################
+
+- rule: find_login_query
+  steps:
+  - intent: find_login_query
+  - action: action_find_login_query_1
+  - action: action_find_genlogin_buttons
+
+- rule: back_action_find_genlogin_buttons
+  steps:
+  - intent: back_action_find_genlogin_buttons
+  - action: action_find_genlogin_buttons
+
+- rule: find_login_query options
+  steps:
+  - or: 
+    - intent: find_genlogin_queries_1
+    - intent: find_genlogin_queries_2
+    - intent: find_genlogin_queries_3
+  - action: action_find_genlogin_queries_info
+  - action: action_find_login_reverse_query_1
+  - action: action_find_login_reverse_query_2
+
+############################################
+##              REGISTRATION              ##
+############################################
+
+- rule: find_reg_query
+  steps:
+  - intent: find_reg_query
+  - action: action_find_reg_query_1
+  - action: action_find_reg_query_buttons 
+
+- rule: back_action_find_reg_query_buttons
+  steps:
+  - intent: back_action_find_reg_query_buttons
+  - action: action_find_reg_query_buttons
+
+- rule: find_genreg_queries
+  steps:
+  - intent: find_genreg_queries
+  - action: action_find_genreg_query_buttons
+
+- rule: find_genreg_queries options
+  steps:
+  - or: 
+    - intent: find_genreg_queries_1
+    - intent: find_genreg_queries_2
+    - intent: find_genreg_queries_3
+    - intent: find_genreg_queries_4
+    - intent: find_genreg_queries_5
+    - intent: find_genreg_queries_6
+    - intent: find_genreg_queries_7
+    - intent: find_genreg_queries_8
+    - intent: find_genreg_queries_9   
+  - action: action_find_genreg_queries_info
+  - action: action_find_genreg_reverse_query_1
+  - action: action_find_genreg_reverse_query_2
+
+- rule: find_altreg_queries
+  steps:
+  - intent: find_altreg_queries
+  - action: action_find_altreg_query_buttons
+
+- rule: find_altreg_queries options
+  steps:
+  - or: 
+    - intent: find_altreg_queries_1
+    - intent: find_altreg_queries_2
+    - intent: find_altreg_queries_3
+    - intent: find_altreg_queries_4
+    - intent: find_altreg_queries_5
+    - intent: find_altreg_queries_6
+    - intent: find_altreg_queries_7
+    - intent: find_altreg_queries_8
+    - intent: find_altreg_queries_9
+  - action: action_find_altreg_queries_info
+  - action: action_find_altreg_reverse_query_1
+  - action: action_find_altreg_reverse_query_2
+
+- rule: find_unenroll_queries
+  steps:
+  - intent: find_unenroll_queries
+  - action: action_find_unenroll_query_buttons
+
+- rule: find_unenroll_queries options
+  steps:
+  - intent: find_unenroll_queries_1
+  - action: action_find_unenroll_queries_info
+  - action: action_find_unenroll_reverse_query_1
+  - action: action_find_unenroll_reverse_query_2 
+
+- rule: find_sec_queries
+  steps:
+  - intent: find_sec_queries
+  - action: action_find_sec_query_buttons
+
+- rule: find_sec_queries options
+  steps:
+  - or: 
+    - intent: find_sec_queries_1
+    - intent: find_sec_queries_2
+    - intent: find_sec_queries_3
+    - intent: find_sec_queries_4
+    - intent: find_sec_queries_5
+    - intent: find_sec_queries_6
+    - intent: find_sec_queries_7
+    - intent: find_sec_queries_8
+    - intent: find_sec_queries_9
+    - intent: find_sec_queries_10
+  - action: action_find_sec_queries_info
+  - action: action_find_sec_reverse_query_1
+  - action: action_find_sec_reverse_query_2
+
+- rule: find_paym_queries
+  steps:
+  - intent: find_paym_queries
+  - action: action_find_paym_query_buttons
+
+- rule: find_paym_queries options
+  steps:
+  - or: 
+    - intent: find_paym_queries_1
+    - intent: find_paym_queries_2
+    - intent: find_paym_queries_3
+    - intent: find_paym_queries_4
+    - intent: find_paym_queries_5
+    - intent: find_paym_queries_6
+    - intent: find_paym_queries_7
+    - intent: find_paym_queries_8
+    - intent: find_paym_queries_9
+    - intent: find_paym_queries_10
+    - intent: find_paym_queries_11
+    - intent: find_paym_queries_12
+    - intent: find_paym_queries_13
+    - intent: find_paym_queries_14
+    - intent: find_paym_queries_15
+    - intent: find_paym_queries_16
+    - intent: find_paym_queries_17
+    - intent: find_paym_queries_18
+    - intent: find_paym_queries_19
+    - intent: find_paym_queries_20
+  - action: action_find_paym_queries_info
+  - action: action_find_paym_reverse_query_1
+  - action: action_find_paym_reverse_query_2
+
+############################################
+##            COURSE ENGAGEMENT           ##
+############################################
+
+- rule: find_course_query
+  steps:
+  - intent: find_course_query
+  - action: action_find_course_query_1
+  - action: action_find_coursequery_query_buttons
+
+- rule: back_action_find_coursequery_query_buttons
+  steps:
+  - intent: back_action_find_coursequery_query_buttons
+  - action: action_find_coursequery_query_buttons
+
+- rule: find_courseaccess_queries
+  steps:
+  - intent: find_courseaccess_queries
+  - action: action_find_courseaccess_query_buttons
+
+- rule: find_courseaccess_queries options
+  steps:
+  - or: 
+    - intent: find_courseaccess_queries_1
+    - intent: find_courseaccess_queries_2
+    - intent: find_courseaccess_queries_3
+    - intent: find_courseaccess_queries_4
+    - intent: find_courseaccess_queries_5
+    - intent: find_courseaccess_queries_6
+    - intent: find_courseaccess_queries_7
+    - intent: find_courseaccess_queries_8    
+  - action: action_find_courseaccess_queries_info
+  - action: action_find_courseaccess_reverse_query_1
+  - action: action_find_courseaccess_reverse_query_2
+
+- rule: find_courseeval_queries
+  steps:
+  - intent: find_courseeval_queries
+  - action: action_find_courseeval_query_buttons
+
+- rule: find_courseeval_queries options
+  steps:
+  - or: 
+    - intent: find_courseeval_queries_1
+    - intent: find_courseeval_queries_2
+  - action: action_find_courseeval_queries_info
+  - action: action_find_courseeval_reverse_query_1
+  - action: action_find_courseeval_reverse_query_2
+
+- rule: find_coursecontent_queries
+  steps:
+  - intent: find_coursecontent_queries
+  - action: action_find_coursecontent_query_buttons
+
+- rule: find_coursecontent_queries options
+  steps:
+  - or: 
+    - intent: find_coursecontent_queries_1
+    - intent: find_coursecontent_queries_2
+    - intent: find_coursecontent_queries_3
+    - intent: find_coursecontent_queries_4
+    - intent: find_coursecontent_queries_5
+    - intent: find_coursecontent_queries_6
+    - intent: find_coursecontent_queries_7
+    - intent: find_coursecontent_queries_8
+    - intent: find_coursecontent_queries_9
+    - intent: find_coursecontent_queries_10
+    - intent: find_coursecontent_queries_11
+    - intent: find_coursecontent_queries_12
+    - intent: find_coursecontent_queries_13
+  - action: action_find_coursecontent_queries_info
+  - action: action_find_coursecontent_reverse_query_1
+  - action: action_find_coursecontent_reverse_query_2
+
+- rule: find_tutorials_queries
+  steps:
+  - intent: find_tutorials_queries
+  - action: action_find_tutorials_query_buttons
+
+- rule: find_tutorials_queries options
+  steps:
+  - or: 
+    - intent: find_tutorials_queries_1
+    - intent: find_tutorials_queries_2
+    - intent: find_tutorials_queries_3
+    - intent: find_tutorials_queries_4
+    - intent: find_tutorials_queries_5
+    - intent: find_tutorials_queries_6
+    - intent: find_tutorials_queries_7
+    - intent: find_tutorials_queries_8
+    - intent: find_tutorials_queries_9
+    - intent: find_tutorials_queries_10
+  - action: action_find_tutorials_queries_info
+  - action: action_find_tutorials_reverse_query_1
+  - action: action_find_tutorials_reverse_query_2 
+
+- rule: find_assignments_queries
+  steps:
+  - intent: find_assignments_queries
+  - action: action_find_assignments_query_buttons
+
+- rule: find_assignments_queries options
+  steps:
+  - or: 
+    - intent: find_assignments_queries_1
+    - intent: find_assignments_queries_2
+    - intent: find_assignments_queries_3
+    - intent: find_assignments_queries_4
+    - intent: find_assignments_queries_5
+    - intent: find_assignments_queries_6
+    - intent: find_assignments_queries_7
+    - intent: find_assignments_queries_8
+  - action: action_find_assignments_queries_info
+  - action: action_find_assignments_reverse_query_1
+  - action: action_find_assignments_reverse_query_2
+
+- rule: find_livelectures_queries
+  steps:
+  - intent: find_livelectures_queries
+  - action: action_find_livelectures_query_buttons
+
+- rule: find_livelectures_queries options
+  steps:
+  - or: 
+    - intent: find_livelectures_queries_1
+    - intent: find_livelectures_queries_2
+    - intent: find_livelectures_queries_3
+    - intent: find_livelectures_queries_4
+  - action: action_find_livelectures_queries_info
+  - action: action_find_livelectures_reverse_query_1
+  - action: action_find_livelectures_reverse_query_2
+
+- rule: find_certificate_queries
+  steps:
+  - intent: find_certificate_queries
+  - action: action_find_certificate_query_buttons
+
+- rule: find_certificate_queries
+  steps:
+  - or: 
+    - intent: find_certificate_queries_1
+    - intent: find_certificate_queries_2
+    - intent: find_certificate_queries_3
+    - intent: find_certificate_queries_4
+    - intent: find_certificate_queries_5
+    - intent: find_certificate_queries_6
+    - intent: find_certificate_queries_7
+    - intent: find_certificate_queries_8
+    - intent: find_certificate_queries_9
+  - action: action_find_certificate_queries_info
+  - action: action_find_certificate_reverse_query_1
+  - action: action_find_certificate_reverse_query_2
+
+############################################
+##               FINAL EXAM               ##
+############################################
+
+- rule: find_course_query
+  steps:
+  - intent: find_finalexam_query
+  - action: action_find_finalexam_query_1
+  - action: action_find_finalexam_query_buttons
+
+- rule: back_action_find_finalexam_query_buttons
+  steps:
+  - intent: back_action_find_finalexam_query_buttons
+  - action: action_find_finalexam_query_buttons
+
+- rule: find_deadline_queries
+  steps:
+  - intent: find_deadline_queries
+  - action: action_find_deadline_query_buttons
+
+- rule: find_deadline_queries options
+  steps:
+  - or: 
+    - intent: find_deadline_queries_1
+    - intent: find_deadline_queries_2
+    - intent: find_deadline_queries_3
+    - intent: find_deadline_queries_4
+    - intent: find_deadline_queries_5
+  - action: action_find_deadline_queries_info
+  - action: action_find_deadline_reverse_query_1
+  - action: action_find_deadline_reverse_query_2 
+
+- rule: find_access_queries
+  steps:
+  - intent: find_access_queries
+  - action: action_find_access_query_buttons
+
+- rule: find_access_queries options
+  steps:
+  - or: 
+    - intent: find_access_queries_1
+    - intent: find_access_queries_2
+    - intent: find_access_queries_3
+    - intent: find_access_queries_4
+    - intent: find_access_queries_5
+    - intent: find_access_queries_6
+  - action: action_find_access_queries_info
+  - action: action_find_access_reverse_query_1
+  - action: action_find_access_reverse_query_2
+
+- rule: find_gradeappeal_queries
+  steps:
+  - intent: find_gradeappeal_queries
+  - action: action_find_gradeappeal_query_buttons
+
+- rule: find_gradeappeal_queries options
+  steps:
+  - or: 
+    - intent: find_gradeappeal_queries_1
+    - intent: find_gradeappeal_queries_2
+    - intent: find_gradeappeal_queries_3
+    - intent: find_gradeappeal_queries_4
+  - action: action_find_gradeappeal_queries_info
+  - action: action_find_gradeappeal_reverse_query_1
+  - action: action_find_gradeappeal_reverse_query_2 
+
+- rule: find_rulesreg_queries
+  steps:
+  - intent: find_rulesreg_queries
+  - action: action_find_rulesreg_query_buttons
+
+- rule: find_rulesreg_queries options
+  steps:
+  - or: 
+    - intent: find_rulesreg_queries_1
+    - intent: find_rulesreg_queries_2
+    - intent: find_rulesreg_queries_3
+    - intent: find_rulesreg_queries_4
+    - intent: find_rulesreg_queries_5
+    - intent: find_rulesreg_queries_6
+    - intent: find_rulesreg_queries_7
+    - intent: find_rulesreg_queries_8
+    - intent: find_rulesreg_queries_9
+    - intent: find_rulesreg_queries_10
+    - intent: find_rulesreg_queries_11
+  - action: action_find_rulesreg_queries_info
+  - action: action_find_rulesreg_reverse_query_1
+  - action: action_find_rulesreg_reverse_query_2 
+
+- rule: find_deferrals_queries
+  steps:
+  - intent: find_deferrals_queries
+  - action: action_find_deferrals_query_buttons
+
+- rule: find_deferrals_queries options
+  steps:
+  - or: 
+    - intent: find_deferrals_queries_1
+    - intent: find_deferrals_queries_2
+  - action: action_find_deferrals_queries_info
+  - action: action_find_deferrals_reverse_query_1
+  - action: action_find_deferrals_reverse_query_2 
+
+############################################
+##           COURSE INFORMATION           ##
+############################################
+
+- rule: find_course_type
+  steps:
+  - intent: find_course_type
+  - action: action_find_courseinfo_query_1
+  - action: action_find_courseinfo_query_2 
+  - action: action_find_courseinfo_query_3  
+
+- rule: find_course_type options
+  steps:
+  - or:
+    - intent: find_DL001_description
+    - intent: find_DL001_content
+    - intent: find_DL001_learningoutcomes
+    - intent: find_DL001_teaching
+    - intent: find_DL001_finalexam
+    - intent: find_DL001_cert
+    - intent: find_DL001_dur
+    - intent: find_DL001_tuitionfees
+    - intent: find_DL001_elig
+    - intent: find_DL001_reg
+    - intent: find_DL001_lang
+    - intent: find_DL001_nextsess 
+    - intent: find_DL101_description
+    - intent: find_DL101_content
+    - intent: find_DL101_learningoutcomes
+    - intent: find_DL101_teaching
+    - intent: find_DL101_finalexam
+    - intent: find_DL101_cert
+    - intent: find_DL101_dur
+    - intent: find_DL101_tuitionfees
+    - intent: find_DL101_elig
+    - intent: find_DL101_reg
+    - intent: find_DL101_lang
+    - intent: find_DL101_nextsess 
+    - intent: find_DL101PCT_description
+    - intent: find_DL101PCT_content
+    - intent: find_DL101PCT_learningoutcomes
+    - intent: find_DL101PCT_teaching
+    - intent: find_DL101PCT_finalexam
+    - intent: find_DL101PCT_cert
+    - intent: find_DL101PCT_dur
+    - intent: find_DL101PCT_tuitionfees
+    - intent: find_DL101PCT_elig
+    - intent: find_DL101PCT_reg
+    - intent: find_DL101PCT_lang
+    - intent: find_DL101PCT_nextsess 
+    - intent: find_DL170_description
+    - intent: find_DL170_content
+    - intent: find_DL170_learningoutcomes
+    - intent: find_DL170_teaching
+    - intent: find_DL170_finalexam
+    - intent: find_DL170_cert
+    - intent: find_DL170_dur
+    - intent: find_DL170_tuitionfees
+    - intent: find_DL170_elig
+    - intent: find_DL170_reg
+    - intent: find_DL170_lang
+    - intent: find_DL170_nextsess 
+    - intent: find_DL177_description
+    - intent: find_DL177_content
+    - intent: find_DL177_learningoutcomes
+    - intent: find_DL177_teaching
+    - intent: find_DL177_finalexam
+    - intent: find_DL177_cert
+    - intent: find_DL177_dur
+    - intent: find_DL177_tuitionfees
+    - intent: find_DL177_elig
+    - intent: find_DL177_reg
+    - intent: find_DL177_lang
+    - intent: find_DL177_nextsess             
+    - intent: find_DLIPPAN_description
+    - intent: find_DLIPPAN_content
+    - intent: find_DLIPPAN_learningoutcomes
+    - intent: find_DLIPPAN_teaching
+    - intent: find_DLIPPAN_finalexam
+    - intent: find_DLIPPAN_cert
+    - intent: find_DLIPPAN_dur
+    - intent: find_DLIPPAN_tuitionfees
+    - intent: find_DLIPPAN_elig
+    - intent: find_DLIPPAN_reg
+    - intent: find_DLIPPAN_lang
+    - intent: find_DLIPPAN_nextsess  
+    - intent: find_DL201_description
+    - intent: find_DL201_content
+    - intent: find_DL201_learningoutcomes
+    - intent: find_DL201_teaching
+    - intent: find_DL201_finalexam
+    - intent: find_DL201_cert
+    - intent: find_DL201_dur
+    - intent: find_DL201_tuitionfees
+    - intent: find_DL201_elig
+    - intent: find_DL201_reg
+    - intent: find_DL201_lang
+    - intent: find_DL201_nextsess 
+    - intent: find_DL203_description
+    - intent: find_DL203_content
+    - intent: find_DL203_learningoutcomes
+    - intent: find_DL203_teaching
+    - intent: find_DL203_finalexam
+    - intent: find_DL203_cert
+    - intent: find_DL203_dur
+    - intent: find_DL203_tuitionfees
+    - intent: find_DL203_elig
+    - intent: find_DL203_reg
+    - intent: find_DL203_lang
+    - intent: find_DL203_nextsess 
+    - intent: find_DL205UPOV_description
+    - intent: find_DL205UPOV_content
+    - intent: find_DL205UPOV_learningoutcomes
+    - intent: find_DL205UPOV_teaching
+    - intent: find_DL205UPOV_finalexam
+    - intent: find_DL205UPOV_cert
+    - intent: find_DL205UPOV_dur
+    - intent: find_DL205UPOV_tuitionfees
+    - intent: find_DL205UPOV_elig
+    - intent: find_DL205UPOV_reg
+    - intent: find_DL205UPOV_lang
+    - intent: find_DL205UPOV_nextsess 
+    - intent: find_DL301_description
+    - intent: find_DL301_content
+    - intent: find_DL301_learningoutcomes
+    - intent: find_DL301_teaching
+    - intent: find_DL301_finalexam
+    - intent: find_DL301_cert
+    - intent: find_DL301_dur
+    - intent: find_DL301_tuitionfees
+    - intent: find_DL301_elig
+    - intent: find_DL301_reg
+    - intent: find_DL301_lang
+    - intent: find_DL301_nextsess 
+    - intent: find_DL302_description
+    - intent: find_DL302_content
+    - intent: find_DL302_learningoutcomes
+    - intent: find_DL302_teaching
+    - intent: find_DL302_finalexam
+    - intent: find_DL302_cert
+    - intent: find_DL302_dur
+    - intent: find_DL302_tuitionfees
+    - intent: find_DL302_elig
+    - intent: find_DL302_reg
+    - intent: find_DL302_lang
+    - intent: find_DL302_nextsess 
+    - intent: find_DL303_description
+    - intent: find_DL303_content
+    - intent: find_DL303_learningoutcomes
+    - intent: find_DL303_teaching
+    - intent: find_DL303_finalexam
+    - intent: find_DL303_cert
+    - intent: find_DL303_dur
+    - intent: find_DL303_tuitionfees
+    - intent: find_DL303_elig
+    - intent: find_DL303_reg
+    - intent: find_DL303_lang
+    - intent: find_DL303_nextsess                 
+    - intent: find_DL317_description
+    - intent: find_DL317_content
+    - intent: find_DL317_learningoutcomes
+    - intent: find_DL317_teaching
+    - intent: find_DL317_finalexam
+    - intent: find_DL317_cert
+    - intent: find_DL317_dur
+    - intent: find_DL317_tuitionfees
+    - intent: find_DL317_elig
+    - intent: find_DL317_reg
+    - intent: find_DL317_lang
+    - intent: find_DL317_nextsess   
+    - intent: find_DL318_description
+    - intent: find_DL318_content
+    - intent: find_DL318_learningoutcomes
+    - intent: find_DL318_teaching
+    - intent: find_DL318_finalexam
+    - intent: find_DL318_cert
+    - intent: find_DL318_dur
+    - intent: find_DL318_tuitionfees
+    - intent: find_DL318_elig
+    - intent: find_DL318_reg
+    - intent: find_DL318_lang
+    - intent: find_DL318_nextsess   
+    - intent: find_DL320_description
+    - intent: find_DL320_content
+    - intent: find_DL320_learningoutcomes
+    - intent: find_DL320_teaching
+    - intent: find_DL320_finalexam
+    - intent: find_DL320_cert
+    - intent: find_DL320_dur
+    - intent: find_DL320_tuitionfees
+    - intent: find_DL320_elig
+    - intent: find_DL320_reg
+    - intent: find_DL320_lang
+    - intent: find_DL320_nextsess           
+    - intent: find_DL427_description
+    - intent: find_DL427_content
+    - intent: find_DL427_learningoutcomes
+    - intent: find_DL427_teaching
+    - intent: find_DL427_finalexam
+    - intent: find_DL427_cert
+    - intent: find_DL427_dur
+    - intent: find_DL427_tuitionfees
+    - intent: find_DL427_elig
+    - intent: find_DL427_reg
+    - intent: find_DL427_lang
+    - intent: find_DL427_nextsess 
+    - intent: find_DL450_description
+    - intent: find_DL450_content
+    - intent: find_DL450_learningoutcomes
+    - intent: find_DL450_teaching
+    - intent: find_DL450_finalexam
+    - intent: find_DL450_cert
+    - intent: find_DL450_dur
+    - intent: find_DL450_tuitionfees
+    - intent: find_DL450_elig
+    - intent: find_DL450_reg
+    - intent: find_DL450_lang
+    - intent: find_DL450_nextsess 
+    - intent: find_DL501_description
+    - intent: find_DL501_content
+    - intent: find_DL501_learningoutcomes
+    - intent: find_DL501_teaching
+    - intent: find_DL501_finalexam
+    - intent: find_DL501_cert
+    - intent: find_DL501_dur
+    - intent: find_DL501_tuitionfees
+    - intent: find_DL501_elig
+    - intent: find_DL501_reg
+    - intent: find_DL501_lang
+    - intent: find_DL501_nextsess
+    - intent: find_DL502_description
+    - intent: find_DL502_content
+    - intent: find_DL502_learningoutcomes
+    - intent: find_DL502_teaching
+    - intent: find_DL502_finalexam
+    - intent: find_DL502_cert
+    - intent: find_DL502_dur
+    - intent: find_DL502_tuitionfees
+    - intent: find_DL502_elig
+    - intent: find_DL502_reg
+    - intent: find_DL502_lang
+    - intent: find_DL502_nextsess 
+    - intent: find_DL503_description
+    - intent: find_DL503_content
+    - intent: find_DL503_learningoutcomes
+    - intent: find_DL503_teaching
+    - intent: find_DL503_finalexam
+    - intent: find_DL503_cert
+    - intent: find_DL503_dur
+    - intent: find_DL503_tuitionfees
+    - intent: find_DL503_elig
+    - intent: find_DL503_reg
+    - intent: find_DL503_lang
+    - intent: find_DL503_nextsess 
+    - intent: find_DL506_description
+    - intent: find_DL506_content
+    - intent: find_DL506_learningoutcomes
+    - intent: find_DL506_teaching
+    - intent: find_DL506_finalexam
+    - intent: find_DL506_cert
+    - intent: find_DL506_dur
+    - intent: find_DL506_tuitionfees
+    - intent: find_DL506_elig
+    - intent: find_DL506_reg
+    - intent: find_DL506_lang
+    - intent: find_DL506_nextsess 
+    - intent: find_DL511_description
+    - intent: find_DL511_content
+    - intent: find_DL511_learningoutcomes
+    - intent: find_DL511_teaching
+    - intent: find_DL511_finalexam
+    - intent: find_DL511_cert
+    - intent: find_DL511_dur
+    - intent: find_DL511_tuitionfees
+    - intent: find_DL511_elig
+    - intent: find_DL511_reg
+    - intent: find_DL511_lang
+    - intent: find_DL511_nextsess 
+    - intent: find_DL701_description
+    - intent: find_DL701_content
+    - intent: find_DL701_learningoutcomes
+    - intent: find_DL701_teaching
+    - intent: find_DL701_finalexam
+    - intent: find_DL701_cert
+    - intent: find_DL701_dur
+    - intent: find_DL701_tuitionfees
+    - intent: find_DL701_elig
+    - intent: find_DL701_reg
+    - intent: find_DL701_lang
+    - intent: find_DL701_nextsess 
+    - intent: find_DL730_description
+    - intent: find_DL730_content
+    - intent: find_DL730_learningoutcomes
+    - intent: find_DL730_teaching
+    - intent: find_DL730_finalexam
+    - intent: find_DL730_cert
+    - intent: find_DL730_dur
+    - intent: find_DL730_tuitionfees
+    - intent: find_DL730_elig
+    - intent: find_DL730_reg
+    - intent: find_DL730_lang
+    - intent: find_DL730_nextsess                                  
+    - intent: find_IP4TEACH_description
+    - intent: find_IP4TEACH_content
+    - intent: find_IP4TEACH_learningoutcomes
+    - intent: find_IP4TEACH_teaching
+    - intent: find_IP4TEACH_finalexam
+    - intent: find_IP4TEACH_cert
+    - intent: find_IP4TEACH_dur
+    - intent: find_IP4TEACH_tuitionfees
+    - intent: find_IP4TEACH_elig
+    - intent: find_IP4TEACH_reg
+    - intent: find_IP4TEACH_lang
+    - intent: find_IP4TEACH_nextsess  
+    - intent: find_AICC_description
+    - intent: find_AICC_content
+    - intent: find_AICC_learningoutcomes
+    - intent: find_AICC_teaching
+    - intent: find_AICC_finalexam
+    - intent: find_AICC_cert
+    - intent: find_AICC_dur
+    - intent: find_AICC_tuitionfees
+    - intent: find_AICC_mode
+    - intent: find_AICC_elig
+    - intent: find_AICC_reg
+    - intent: find_AICC_lang
+    - intent: find_AICC_nextsess    
+    - intent: find_IPCC_description
+    - intent: find_IPCC_content
+    - intent: find_IPCC_learningoutcomes
+    - intent: find_IPCC_teaching
+    - intent: find_IPCC_finalexam
+    - intent: find_IPCC_cert
+    - intent: find_IPCC_dur
+    - intent: find_IPCC_tuitionfees
+    - intent: find_IPCC_mode
+    - intent: find_IPCC_elig
+    - intent: find_IPCC_reg
+    - intent: find_IPCC_lang
+    - intent: find_IPCC_nextsess     
+    - intent: find_UNESCO_description
+    - intent: find_UNESCO_content
+    - intent: find_UNESCO_learningoutcomes
+    - intent: find_UNESCO_teaching
+    - intent: find_UNESCO_finalexam
+    - intent: find_UNESCO_cert
+    - intent: find_UNESCO_dur
+    - intent: find_UNESCO_tuitionfees
+    - intent: find_UNESCO_mode
+    - intent: find_UNESCO_elig
+    - intent: find_UNESCO_reg
+    - intent: find_UNESCO_lang
+    - intent: find_UNESCO_nextsess   
+    - intent: find_IPDTP_description
+    - intent: find_IPDTP_content
+    - intent: find_IPDTP_learningoutcomes
+    - intent: find_IPDTP_teaching
+    - intent: find_IPDTP_finalexam
+    - intent: find_IPDTP_cert
+    - intent: find_IPDTP_dur
+    - intent: find_IPDTP_tuitionfees
+    - intent: find_IPDTP_mode
+    - intent: find_IPDTP_elig
+    - intent: find_IPDTP_reg
+    - intent: find_IPDTP_lang
+    - intent: find_IPDTP_nextsess    
+    - intent: find_DLJTIP_description
+    - intent: find_DLJTIP_content
+    - intent: find_DLJTIP_learningoutcomes
+    - intent: find_DLJTIP_teaching
+    - intent: find_DLJTIP_finalexam
+    - intent: find_DLJTIP_cert
+    - intent: find_DLJTIP_dur
+    - intent: find_DLJTIP_tuitionfees
+    - intent: find_DLJTIP_mode
+    - intent: find_DLJTIP_elig
+    - intent: find_DLJTIP_reg
+    - intent: find_DLJTIP_lang
+    - intent: find_DLJTIP_nextsess
+    - intent: find_DLIPE_description
+    - intent: find_DLIPE_content
+    - intent: find_TISCS_description
+    - intent: find_TISCS_content
+    - intent: find_TISCS_elig
+    - intent: find_TISCS_lang
+    - intent: find_EXP_description
+    - intent: find_EXP_content
+    - intent: find_WDAP_description
+    - intent: find_WDAP_content
+    - intent: find_WDAP_elig
+    - intent: find_WDAP_lang
+    - intent: find_WIPOConnect_description
+    - intent: find_WIPOConnect_content
+    - intent: find_WIPOConnect_elig
+    - intent: find_WIPOConnect_lang
+    - intent: find_ABC_description
+    - intent: find_ABC_content
+    - intent: find_ABC_elig
+    - intent: find_ABC_lang    
+    - intent: find_IPDTO_description
+    - intent: find_IPDTO_content 
+  - action: action_find_all_course_info
+  - action: action_find_course_reverse_1
+  - action: action_find_course_reverse_2  

@@ -1,0 +1,1296 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- find_course_type:
+    use_entities: true
+- find_login_query:
+    use_entities: true
+- find_reg_query:
+    use_entities: true
+- find_button_data:
+    use_entities: true
+- find_genlogin_queries:
+    use_entities: true
+- find_genlogin_queries_1:
+    use_entities: true
+- find_genlogin_queries_2:
+    use_entities: true
+- find_genlogin_queries_3:
+    use_entities: true
+- find_genreg_queries_1:
+    use_entities: true
+- find_genreg_queries_2:
+    use_entities: true
+- find_genreg_queries_3:
+    use_entities: true
+- find_genreg_queries_4:
+    use_entities: true
+- find_genreg_queries_5:
+    use_entities: true
+- find_genreg_queries_6:
+    use_entities: true
+- find_genreg_queries_7:
+    use_entities: true
+- find_genreg_queries_8:
+    use_entities: true
+- find_genreg_queries_9:
+    use_entities: true
+- find_altreg_queries_1:
+    use_entities: true
+- find_altreg_queries_2:
+    use_entities: true
+- find_altreg_queries_3:
+    use_entities: true
+- find_altreg_queries_4:
+    use_entities: true
+- find_altreg_queries_5:
+    use_entities: true
+- find_altreg_queries_6:
+    use_entities: true
+- find_genreg_queries:
+    use_entities: true
+- find_altreg_queries:
+    use_entities: true
+- find_unenroll_queries:
+    use_entities: true
+- find_sec_queries:
+    use_entities: true
+- find_paym_queries:
+    use_entities: true
+- find_unenroll_queries_1:
+    use_entities: true
+- find_sec_queries_1:
+    use_entities: true
+- find_sec_queries_2:
+    use_entities: true
+- find_sec_queries_3:
+    use_entities: true
+- find_sec_queries_4:
+    use_entities: true
+- find_sec_queries_5:
+    use_entities: true
+- find_sec_queries_6:
+    use_entities: true
+- find_sec_queries_7:
+    use_entities: true
+- find_sec_queries_8:
+    use_entities: true
+- find_sec_queries_9:
+    use_entities: true
+- find_sec_queries_10:
+    use_entities: true
+- find_paym_queries_1:
+    use_entities: true
+- find_paym_queries_2:
+    use_entities: true
+- find_paym_queries_3:
+    use_entities: true
+- find_paym_queries_4:
+    use_entities: true
+- find_paym_queries_5:
+    use_entities: true
+- find_paym_queries_6:
+    use_entities: true
+- find_paym_queries_7:
+    use_entities: true
+- find_paym_queries_8:
+    use_entities: true
+- find_paym_queries_9:
+    use_entities: true
+- find_paym_queries_10:
+    use_entities: true
+- find_paym_queries_11:
+    use_entities: true
+- find_paym_queries_12:
+    use_entities: true
+- find_paym_queries_13:
+    use_entities: true
+- find_paym_queries_14:
+    use_entities: true
+- find_paym_queries_15:
+    use_entities: true
+- find_paym_queries_16:
+    use_entities: true
+- find_paym_queries_17:
+    use_entities: true
+- find_paym_queries_18:
+    use_entities: true
+- find_paym_queries_19:
+    use_entities: true
+- find_paym_queries_20:
+    use_entities: true
+- find_gencourse_queries:
+    use_entities: true
+- find_DL101_dur:
+    use_entities: true
+- find_IPCC_teaching:
+    use_entities: true
+- find_DL317_tuitionfees:
+    use_entities: true
+- find_DL318_learningoutcomes:
+    use_entities: true
+- find_DL427_finalexam:
+    use_entities: true
+- find_DL101PCT_nextsess:
+    use_entities: true
+- find_DL503_dur:
+    use_entities: true
+- find_DL170_dur:
+    use_entities: true
+- find_IP4Teachers_nextsess:
+    use_entities: true
+- find_DL205UPOV_lang:
+    use_entities: true
+- find_DLJTIP_learningoutcomes:
+    use_entities: true
+- find_DL101_lang:
+    use_entities: true
+- find_DL201_nextsess:
+    use_entities: true
+- find_DL301_tuitionfees:
+    use_entities: true
+- find_DL427_teaching:
+    use_entities: true
+- find_DL503_content:
+    use_entities: true
+- find_DL203_learningoutcomes:
+    use_entities: true
+- find_DL318_tuitionfees:
+    use_entities: true
+- find_DL203_tuitionfees:
+    use_entities: true
+- find_IP4Teachers_cert:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_content:
+    use_entities: true
+- find_WIPDC_elig:
+    use_entities: true
+- find_DL205UPOV_cert:
+    use_entities: true
+- find_DL502_description:
+    use_entities: true
+- find_DL320_learningoutcomes:
+    use_entities: true
+- find_DL301_nextsess:
+    use_entities: true
+- find_DL302_dur:
+    use_entities: true
+- find_DL511_teaching:
+    use_entities: true
+- find_IPCC_cert:
+    use_entities: true
+- find_DL318_dur:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_description:
+    use_entities: true
+- find_DL506_dur:
+    use_entities: true
+- find_DL205UPOV_dur:
+    use_entities: true
+- find_DL511_tuitionfees:
+    use_entities: true
+- find_DL101_finalexam:
+    use_entities: true
+- find_DL001_lang:
+    use_entities: true
+- find_DL170_learningoutcomes:
+    use_entities: true
+- find_DL320_lang:
+    use_entities: true
+- find_DL301_learningoutcomes:
+    use_entities: true
+- find_DL303_lang:
+    use_entities: true
+- find_DL101PCT_content:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_cert:
+    use_entities: true
+- find_DL511_learningoutcomes:
+    use_entities: true
+- find_DL502_learningoutcomes:
+    use_entities: true
+- find_DL317_elig:
+    use_entities: true
+- find_DL205UPOV_finalexam:
+    use_entities: true
+- find_DL501_elig:
+    use_entities: true
+- find_DL320_cert:
+    use_entities: true
+- find_DL001_tuitionfees:
+    use_entities: true
+- find_DL302_content:
+    use_entities: true
+- find_DL511_elig:
+    use_entities: true
+- find_DL170_lang:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_nextsess:
+    use_entities: true
+- find_DL203_elig:
+    use_entities: true
+- find_DL317_dur:
+    use_entities: true
+- find_DL302_nextsess:
+    use_entities: true
+- find_DL730_teaching:
+    use_entities: true
+- find_DL302_reg:
+    use_entities: true
+- find_DL302_teaching:
+    use_entities: true
+- find_DLIPPAN_content:
+    use_entities: true
+- find_DL205UPOV_teaching:
+    use_entities: true
+- find_DL177_learningoutcomes:
+    use_entities: true
+- find_DL201_dur:
+    use_entities: true
+- find_WIPDC_teaching:
+    use_entities: true
+- find_DL302_elig:
+    use_entities: true
+- find_DL101PCT_learningoutcomes:
+    use_entities: true
+- find_DL305UPOV_tuitionfees:
+    use_entities: true
+- find_DL320_tuitionfees:
+    use_entities: true
+- find_DL427_reg:
+    use_entities: true
+- find_DL450_finalexam:
+    use_entities: true
+- find_DL317_nextsess:
+    use_entities: true
+- find_DL317_reg:
+    use_entities: true
+- find_WIPDC_finalexam:
+    use_entities: true
+- find_WIPDC_content:
+    use_entities: true
+- find_DL305UPOV_dur:
+    use_entities: true
+- find_DL701_description:
+    use_entities: true
+- find_AICC_dur:
+    use_entities: true
+- find_DL305UPOV_content:
+    use_entities: true
+- find_DL101PCT_elig:
+    use_entities: true
+- find_DL701_nextsess:
+    use_entities: true
+- find_DL303_content:
+    use_entities: true
+- find_DL511_content:
+    use_entities: true
+- find_DL205UPOV_content:
+    use_entities: true
+- find_DL503_cert:
+    use_entities: true
+- find_DL201_learningoutcomes:
+    use_entities: true
+- find_DL177_finalexam:
+    use_entities: true
+- find_DL318_finalexam:
+    use_entities: true
+- find_DL701_learningoutcomes:
+    use_entities: true
+- find_DL318_nextsess:
+    use_entities: true
+- find_DLJTIP_dur:
+    use_entities: true
+- find_DL503_elig:
+    use_entities: true
+- find_DL305UPOV_lang:
+    use_entities: true
+- find_DL506_reg:
+    use_entities: true
+- find_DL502_finalexam:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_reg:
+    use_entities: true
+- find_DL101_reg:
+    use_entities: true
+- find_DL170_content:
+    use_entities: true
+- find_DL303_teaching:
+    use_entities: true
+- find_DL305UPOV_nextsess:
+    use_entities: true
+- find_DL170_reg:
+    use_entities: true
+- find_DL101_content:
+    use_entities: true
+- find_IPCC_description:
+    use_entities: true
+- find_DL450_tuitionfees:
+    use_entities: true
+- find_AICC_teaching:
+    use_entities: true
+- find_DL001_dur:
+    use_entities: true
+- find_DL701_lang:
+    use_entities: true
+- find_DL318_elig:
+    use_entities: true
+- find_DL001_nextsess:
+    use_entities: true
+- find_AICC_description:
+    use_entities: true
+- find_DL318_teaching:
+    use_entities: true
+- find_DL450_lang:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_finalexam:
+    use_entities: true
+- find_DL101_nextsess:
+    use_entities: true
+- find_DLJTIP_cert:
+    use_entities: true
+- find_WIPDC_cert:
+    use_entities: true
+- find_DL301_description:
+    use_entities: true
+- find_DL506_lang:
+    use_entities: true
+- find_DL502_dur:
+    use_entities: true
+- find_DL506_cert:
+    use_entities: true
+- find_DL701_elig:
+    use_entities: true
+- find_DL317_content:
+    use_entities: true
+- find_DL203_content:
+    use_entities: true
+- find_IP4Teachers_reg:
+    use_entities: true
+- find_DL101PCT_dur:
+    use_entities: true
+- find_DL503_teaching:
+    use_entities: true
+- find_WIPDC_dur:
+    use_entities: true
+- find_DL730_description:
+    use_entities: true
+- find_DLIPPAN_teaching:
+    use_entities: true
+- find_DL203_nextsess:
+    use_entities: true
+- find_DL177_content:
+    use_entities: true
+- find_DL303_learningoutcomes:
+    use_entities: true
+- find_DL305UPOV_learningoutcomes:
+    use_entities: true
+- find_DL730_dur:
+    use_entities: true
+- find_DL427_description:
+    use_entities: true
+- find_AICC_elig:
+    use_entities: true
+- find_DLJTIP_teaching:
+    use_entities: true
+- find_DL506_elig:
+    use_entities: true
+- find_IP4Teachers_finalexam:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_lang:
+    use_entities: true
+- find_IPCC_lang:
+    use_entities: true
+- find_DL318_lang:
+    use_entities: true
+- find_DL730_elig:
+    use_entities: true
+- find_DL730_learningoutcomes:
+    use_entities: true
+- find_DL701_reg:
+    use_entities: true
+- find_DL301_reg:
+    use_entities: true
+- find_DL320_description:
+    use_entities: true
+- find_DLIPPAN_finalexam:
+    use_entities: true
+- find_DL511_nextsess:
+    use_entities: true
+- find_IP4Teachers_tuitionfees:
+    use_entities: true
+- find_AICC_finalexam:
+    use_entities: true
+- find_DL320_teaching:
+    use_entities: true
+- find_DL506_nextsess:
+    use_entities: true
+- find_DLIPPAN_lang:
+    use_entities: true
+- find_DL001_elig:
+    use_entities: true
+- find_DL205UPOV_learningoutcomes:
+    use_entities: true
+- find_DLJTIP_finalexam:
+    use_entities: true
+- find_DL177_tuitionfees:
+    use_entities: true
+- find_DL305UPOV_description:
+    use_entities: true
+- find_DL502_cert:
+    use_entities: true
+- find_DL730_finalexam:
+    use_entities: true
+- find_DL170_teaching:
+    use_entities: true
+- find_DL502_tuitionfees:
+    use_entities: true
+- find_DL501_cert:
+    use_entities: true
+- find_DL201_elig:
+    use_entities: true
+- find_DL450_reg:
+    use_entities: true
+- find_DL170_elig:
+    use_entities: true
+- find_DL511_lang:
+    use_entities: true
+- find_DL701_dur:
+    use_entities: true
+- find_DL502_nextsess:
+    use_entities: true
+- find_DL318_description:
+    use_entities: true
+- find_DL450_elig:
+    use_entities: true
+- find_DL503_learningoutcomes:
+    use_entities: true
+- find_DL301_finalexam:
+    use_entities: true
+- find_IPCC_content:
+    use_entities: true
+- find_DL201_content:
+    use_entities: true
+- find_WIPDC_nextsess:
+    use_entities: true
+- find_WIPDC_learningoutcomes:
+    use_entities: true
+- find_DL450_cert:
+    use_entities: true
+- find_DLJTIP_elig:
+    use_entities: true
+- find_DL501_dur:
+    use_entities: true
+- find_DL501_finalexam:
+    use_entities: true
+- find_DL303_elig:
+    use_entities: true
+- find_DL501_teaching:
+    use_entities: true
+- find_DL730_cert:
+    use_entities: true
+- find_DL318_content:
+    use_entities: true
+- find_AICC_tuitionfees:
+    use_entities: true
+- find_DL427_cert:
+    use_entities: true
+- find_DL730_content:
+    use_entities: true
+- find_DL701_content:
+    use_entities: true
+- find_DL305UPOV_elig:
+    use_entities: true
+- find_DL317_finalexam:
+    use_entities: true
+- find_DL701_tuitionfees:
+    use_entities: true
+- find_IP4Teachers_elig:
+    use_entities: true
+- find_DL511_dur:
+    use_entities: true
+- find_DL427_learningoutcomes:
+    use_entities: true
+- find_DL427_tuitionfees:
+    use_entities: true
+- find_DL701_cert:
+    use_entities: true
+- find_AICC_content:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_elig:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_tuitionfees:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_dur:
+    use_entities: true
+- find_DL501_description:
+    use_entities: true
+- find_DL101PCT_teaching:
+    use_entities: true
+- find_DL203_cert:
+    use_entities: true
+- find_DL317_cert:
+    use_entities: true
+- find_DL501_lang:
+    use_entities: true
+- find_DL101_learningoutcomes:
+    use_entities: true
+- find_WIPDC_reg:
+    use_entities: true
+- find_DL450_content:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_teaching:
+    use_entities: true
+- find_DL317_learningoutcomes:
+    use_entities: true
+- find_DL302_tuitionfees:
+    use_entities: true
+- find_AICC_nextsess:
+    use_entities: true
+- find_DL303_cert:
+    use_entities: true
+- find_DL503_lang:
+    use_entities: true
+- find_DL320_dur:
+    use_entities: true
+- find_DL001_cert:
+    use_entities: true
+- find_DL205UPOV_reg:
+    use_entities: true
+- find_DL302_lang:
+    use_entities: true
+- find_DL177_teaching:
+    use_entities: true
+- find_DLJTIP_tuitionfees:
+    use_entities: true
+- find_IPCC_elig:
+    use_entities: true
+- find_DL302_finalexam:
+    use_entities: true
+- find_DL502_teaching:
+    use_entities: true
+- find_DLIPPAN_elig:
+    use_entities: true
+- find_IPCC_learningoutcomes:
+    use_entities: true
+- find_DL302_cert:
+    use_entities: true
+- find_DL301_teaching:
+    use_entities: true
+- find_DL303_finalexam:
+    use_entities: true
+- find_DL101PCT_finalexam:
+    use_entities: true
+- find_DLJTIP_reg:
+    use_entities: true
+- find_DL318_cert:
+    use_entities: true
+- find_DL205UPOV_description:
+    use_entities: true
+- find_DL427_content:
+    use_entities: true
+- find_DL450_teaching:
+    use_entities: true
+- find_DL320_reg:
+    use_entities: true
+- find_DL205UPOV_elig:
+    use_entities: true
+- find_DLIPPAN_dur:
+    use_entities: true
+- find_DL203_dur:
+    use_entities: true
+- find_DL170_description:
+    use_entities: true
+- find_DL101PCT_reg:
+    use_entities: true
+- find_DLJTIP_content:
+    use_entities: true
+- find_DL511_reg:
+    use_entities: true
+- find_DLIPPAN_nextsess:
+    use_entities: true
+- find_DL320_elig:
+    use_entities: true
+- find_DL427_nextsess:
+    use_entities: true
+- find_DL317_lang:
+    use_entities: true
+- find_IPCC_tuitionfees:
+    use_entities: true
+- find_AICC_learningoutcomes:
+    use_entities: true
+- find_DLIPPAN_learningoutcomes:
+    use_entities: true
+- find_IPCC_finalexam:
+    use_entities: true
+- find_DL506_learningoutcomes:
+    use_entities: true
+- find_DLIPPAN_description:
+    use_entities: true
+- find_DL503_nextsess:
+    use_entities: true
+- find_DL701_teaching:
+    use_entities: true
+- find_DL201_description:
+    use_entities: true
+- find_DL450_dur:
+    use_entities: true
+- find_DL502_content:
+    use_entities: true
+- find_DL317_teaching:
+    use_entities: true
+- find_DL001_content:
+    use_entities: true
+- find_IP4Teachers_teaching:
+    use_entities: true
+- find_DL101_description:
+    use_entities: true
+- find_DLIPPAN_reg:
+    use_entities: true
+- find_DL427_elig:
+    use_entities: true
+- find_DL501_reg:
+    use_entities: true
+- find_DL203_lang:
+    use_entities: true
+- find_DL203_description:
+    use_entities: true
+- find_AICC_cert:
+    use_entities: true
+- find_DL320_finalexam:
+    use_entities: true
+- find_DLIPPAN_cert:
+    use_entities: true
+- find_DL101_elig:
+    use_entities: true
+- find_AICC_lang:
+    use_entities: true
+- find_DL170_nextsess:
+    use_entities: true
+- find_DL506_teaching:
+    use_entities: true
+- find_DL305UPOV_teaching:
+    use_entities: true
+- find_DL205UPOV_nextsess:
+    use_entities: true
+- find_DL177_nextsess:
+    use_entities: true
+- find_WIPDC_description:
+    use_entities: true
+- find_IPCC_dur:
+    use_entities: true
+- find_DL177_reg:
+    use_entities: true
+- find_DL201_teaching:
+    use_entities: true
+- find_DL001_finalexam:
+    use_entities: true
+- find_DL303_reg:
+    use_entities: true
+- find_DL001_learningoutcomes:
+    use_entities: true
+- find_DL177_cert:
+    use_entities: true
+- find_DL503_reg:
+    use_entities: true
+- find_DL201_lang:
+    use_entities: true
+- find_IP4Teachers_learningoutcomes:
+    use_entities: true
+- find_WIPDC_tuitionfees:
+    use_entities: true
+- find_DLJTIP_lang:
+    use_entities: true
+- find_DL101_teaching:
+    use_entities: true
+- find_DL730_tuitionfees:
+    use_entities: true
+- find_DL170_finalexam:
+    use_entities: true
+- find_DL201_cert:
+    use_entities: true
+- find_DL511_cert:
+    use_entities: true
+- find_DL101PCT_lang:
+    use_entities: true
+- find_DL305UPOV_reg:
+    use_entities: true
+- find_DL101_cert:
+    use_entities: true
+- find_DL205UPOV_tuitionfees:
+    use_entities: true
+- find_DL101PCT_cert:
+    use_entities: true
+- find_DL303_nextsess:
+    use_entities: true
+- find_DL503_finalexam:
+    use_entities: true
+- find_DL317_description:
+    use_entities: true
+- find_DL301_dur:
+    use_entities: true
+- find_DL203_reg:
+    use_entities: true
+- find_DLIPPAN_tuitionfees:
+    use_entities: true
+- find_DL502_elig:
+    use_entities: true
+- find_DL506_description:
+    use_entities: true
+- find_DL511_description:
+    use_entities: true
+- find_DL203_finalexam:
+    use_entities: true
+- find_DL506_tuitionfees:
+    use_entities: true
+- find_DL177_dur:
+    use_entities: true
+- find_DL502_reg:
+    use_entities: true
+- find_WIPDC_lang:
+    use_entities: true
+- find_DL427_dur:
+    use_entities: true
+- find_IPCC_reg:
+    use_entities: true
+- find_DL730_lang:
+    use_entities: true
+- find_DL503_tuitionfees:
+    use_entities: true
+- find_IP4Teachers_dur:
+    use_entities: true
+- find_DL001_description:
+    use_entities: true
+- find_DL170_tuitionfees:
+    use_entities: true
+- find_DL511_finalexam:
+    use_entities: true
+- find_DL201_tuitionfees:
+    use_entities: true
+- find_DL506_finalexam:
+    use_entities: true
+- find_DL001_reg:
+    use_entities: true
+- find_DL301_elig:
+    use_entities: true
+- find_DL506_content:
+    use_entities: true
+- find_DL177_elig:
+    use_entities: true
+- find_DL450_learningoutcomes:
+    use_entities: true
+- find_DL177_description:
+    use_entities: true
+- find_DL201_finalexam:
+    use_entities: true
+- find_DL501_content:
+    use_entities: true
+- find_DL305UPOV_finalexam:
+    use_entities: true
+- find_DL318_reg:
+    use_entities: true
+- find_DL501_tuitionfees:
+    use_entities: true
+- find_DL320_nextsess:
+    use_entities: true
+- find_L’ORÉAL-UNESCO_learningoutcomes:
+    use_entities: true
+- find_DL503_description:
+    use_entities: true
+- find_DL101PCT_tuitionfees:
+    use_entities: true
+- find_DL301_cert:
+    use_entities: true
+- find_DL177_lang:
+    use_entities: true
+- find_DL502_lang:
+    use_entities: true
+- find_DL303_tuitionfees:
+    use_entities: true
+- find_DL303_dur:
+    use_entities: true
+- find_DL730_nextsess:
+    use_entities: true
+- find_DL301_lang:
+    use_entities: true
+- find_DLJTIP_description:
+    use_entities: true
+- find_DL201_reg:
+    use_entities: true
+- find_DL301_content:
+    use_entities: true
+- find_DL001_teaching:
+    use_entities: true
+- find_DL101_tuitionfees:
+    use_entities: true
+- find_AICC_reg:
+    use_entities: true
+- find_DL501_learningoutcomes:
+    use_entities: true
+- find_DL450_description:
+    use_entities: true
+- find_DL501_nextsess:
+    use_entities: true
+- find_IP4Teachers_content:
+    use_entities: true
+- find_DL450_nextsess:
+    use_entities: true
+- find_DL101PCT_description:
+    use_entities: true
+- find_IP4Teachers_description:
+    use_entities: true
+- find_DL320_content:
+    use_entities: true
+- find_DL427_lang:
+    use_entities: true
+- find_DL302_learningoutcomes:
+    use_entities: true
+- find_DL170_cert:
+    use_entities: true
+- find_DL303_description:
+    use_entities: true
+- find_IP4Teachers_lang:
+    use_entities: true
+- find_DL305UPOV_cert:
+    use_entities: true
+- find_DL730_reg:
+    use_entities: true
+- find_DL203_teaching:
+    use_entities: true
+- find_DL302_description:
+    use_entities: true
+- find_IPCC_nextsess:
+    use_entities: true
+- find_DLJTIP_nextsess:
+    use_entities: true
+- find_DL701_finalexam:
+    use_entities: true
+- find_IP4TEACHERS_nextsess:
+    use_entities: true
+- find_TISCS_content:
+    use_entities: true
+- find_IP4TEACHERS_content:
+    use_entities: true
+- find_UNESCO_lang:
+    use_entities: true
+- find_DI_content:
+    use_entities: true
+- find_UNESCO_reg:
+    use_entities: true
+- find_DLIPE_description:
+    use_entities: true
+- find_IP4TEACHERS_cert:
+    use_entities: true
+- find_IPCC_mode:
+    use_entities: true
+- find_UNESCO_dur:
+    use_entities: true
+- find_IP4TEACHERS_finalexam:
+    use_entities: true
+- find_UNESCO_learningoutcomes:
+    use_entities: true
+- find_UNESCO_nextsess:
+    use_entities: true
+- find_IP4TEACHERS_reg:
+    use_entities: true
+- find_VG_description:
+    use_entities: true
+- find_IP4TEACHERS_description:
+    use_entities: true
+- find_IP4TEACHERS_dur:
+    use_entities: true
+- find_DI_description:
+    use_entities: true
+- find_UNESCO_tuitionfees:
+    use_entities: true
+- find_IP4TEACHERS_teaching:
+    use_entities: true
+- find_IP4TEACHERS_elig:
+    use_entities: true
+- find_AICC_mode:
+    use_entities: true
+- find_UNESCO_elig:
+    use_entities: true
+- find_VG_content:
+    use_entities: true
+- find_IP4TEACHERS_lang:
+    use_entities: true
+- find_UNESCO_content:
+    use_entities: true
+- find_UNESCO_mode:
+    use_entities: true
+- find_DLJTIP_mode:
+    use_entities: true
+- find_IP4TEACHERS_learningoutcomes:
+    use_entities: true
+- find_EXP_description:
+    use_entities: true
+- find_WIPDC_mode:
+    use_entities: true
+- find_TISCS_description:
+    use_entities: true
+- find_UNESCO_finalexam:
+    use_entities: true
+- find_UNESCO_teaching:
+    use_entities: true
+- find_UNESCO_description:
+    use_entities: true
+- find_DLIPE_content:
+    use_entities: true
+- find_IP4TEACHERS_tuitionfees:
+    use_entities: true
+- find_UNESCO_cert:
+    use_entities: true
+- find_EXP_content:
+    use_entities: true
+- find_advcourse_queries:
+    use_entities: true
+- find_pilotcourse_queries:
+    use_entities: true
+- find_blencourse_queries:
+    use_entities: true
+- find_askadvcourse_question:
+    use_entities: true
+- find_askgencourse_question:
+    use_entities: true
+- find_askblencourse_question:
+    use_entities: true
+- find_askpilotcourse_question:
+    use_entities: true
+- find_course_type_ask:
+    use_entities: true
+- find_genreg_queries_10:
+    use_entities: true
+- find_altreg_queries_8:
+    use_entities: true
+- find_altreg_queries_7:
+    use_entities: true
+- find_coursecontent_queries_3:
+    use_entities: true
+- find_logreg_queries_3:
+    use_entities: true
+- find_deadline_queries_5:
+    use_entities: true
+- find_coursecontent_queries_11:
+    use_entities: true
+- find_coursecontent_queries_8:
+    use_entities: true
+- find_tutorials_queries_2:
+    use_entities: true
+- find_coursecontent_queries_12:
+    use_entities: true
+- find_deadline_queries_2:
+    use_entities: true
+- find_coursecontent_queries_6:
+    use_entities: true
+- find_rulesreg_queries_4:
+    use_entities: true
+- find_tutorials_queries_5:
+    use_entities: true
+- find_assignments_queries_3:
+    use_entities: true
+- find_tutorials_queries_3:
+    use_entities: true
+- find_certificate_queries_7:
+    use_entities: true
+- find_coursecontent_queries_13:
+    use_entities: true
+- find_deadline_queries_4:
+    use_entities: true
+- find_assignments_queries_4:
+    use_entities: true
+- find_courseaccess_queries_7:
+    use_entities: true
+- find_courseaccess_queries_3:
+    use_entities: true
+- find_assignments_queries_8:
+    use_entities: true
+- find_assignments_queries_1:
+    use_entities: true
+- find_rulesreg_queries_2:
+    use_entities: true
+- find_livelectures_queries_1:
+    use_entities: true
+- find_certificate_queries_6:
+    use_entities: true
+- find_logreg_queries_4:
+    use_entities: true
+- find_gradeappeal_queries_4:
+    use_entities: true
+- find_courseaccess_queries_2:
+    use_entities: true
+- find_coursecontent_queries_1:
+    use_entities: true
+- find_courseaccess_queries_1:
+    use_entities: true
+- find_rulesreg_queries_3:
+    use_entities: true
+- find_gradeappeal_queries_1:
+    use_entities: true
+- find_courseaccess_queries_6:
+    use_entities: true
+- find_tutorials_queries_7:
+    use_entities: true
+- find_coursecontent_queries_2:
+    use_entities: true
+- find_tutorials_queries_6:
+    use_entities: true
+- find_rulesreg_queries_11:
+    use_entities: true
+- find_access_queries_4:
+    use_entities: true
+- find_livelectures_queries_4:
+    use_entities: true
+- find_courseaccess_queries_5:
+    use_entities: true
+- find_logreg_queries_1:
+    use_entities: true
+- find_certificate_queries_3:
+    use_entities: true
+- find_rulesreg_queries_10:
+    use_entities: true
+- find_coursecontent_queries_5:
+    use_entities: true
+- find_coursecontent_queries_4:
+    use_entities: true
+- find_certificate_queries_9:
+    use_entities: true
+- find_logreg_queries_5:
+    use_entities: true
+- find_deferrals_queries_2:
+    use_entities: true
+- find_certificate_queries_4:
+    use_entities: true
+- find_access_queries_1:
+    use_entities: true
+- find_certificate_queries_1:
+    use_entities: true
+- find_tutorials_queries_4:
+    use_entities: true
+- find_livelectures_queries_3:
+    use_entities: true
+- find_rulesreg_queries_9:
+    use_entities: true
+- find_tutorials_queries_8:
+    use_entities: true
+- find_certificate_queries_5:
+    use_entities: true
+- find_access_queries_5:
+    use_entities: true
+- find_tutorials_queries_10:
+    use_entities: true
+- find_logreg_queries_2:
+    use_entities: true
+- find_coursecontent_queries_10:
+    use_entities: true
+- find_assignments_queries_6:
+    use_entities: true
+- find_logreg_queries_6:
+    use_entities: true
+- find_assignments_queries_5:
+    use_entities: true
+- find_access_queries_3:
+    use_entities: true
+- find_courseaccess_queries_4:
+    use_entities: true
+- find_livelectures_queries_2:
+    use_entities: true
+- find_courseeval_queries_1:
+    use_entities: true
+- find_certificate_queries_2:
+    use_entities: true
+- find_rulesreg_queries_7:
+    use_entities: true
+- find_rulesreg_queries_6:
+    use_entities: true
+- find_assignments_queries_7:
+    use_entities: true
+- find_deferrals_queries_1:
+    use_entities: true
+- find_rulesreg_queries_8:
+    use_entities: true
+- find_gradeappeal_queries_3:
+    use_entities: true
+- find_coursecontent_queries_9:
+    use_entities: true
+- find_tutorials_queries_1:
+    use_entities: true
+- find_access_queries_2:
+    use_entities: true
+- find_courseeval_queries_2:
+    use_entities: true
+- find_gradeappeal_queries_2:
+    use_entities: true
+- find_deadline_queries_3:
+    use_entities: true
+- find_assignments_queries_2:
+    use_entities: true
+- find_rulesreg_queries_1:
+    use_entities: true
+- find_certificate_queries_8:
+    use_entities: true
+- find_tutorials_queries_9:
+    use_entities: true
+- find_deadline_queries_1:
+    use_entities: true
+- find_rulesreg_queries_5:
+    use_entities: true
+- find_coursecontent_queries_7:
+    use_entities: true
+- find_rulesreg_queries:
+    use_entities: true
+- find_certificate_queries:
+    use_entities: true
+- find_deadline_queries:
+    use_entities: true
+- find_tutorials_queries:
+    use_entities: true
+- find_assignments_queries:
+    use_entities: true
+- find_courseaccess_queries:
+    use_entities: true
+- find_course_query:
+    use_entities: true
+- find_gradeappeal_queries:
+    use_entities: true
+- find_finalexam_query:
+    use_entities: true
+- find_courseeval_queries:
+    use_entities: true
+- find_livelectures_queries:
+    use_entities: true
+- find_coursecontent_queries:
+    use_entities: true
+- find_deferrals_queries:
+    use_entities: true
+- find_access_queries:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- find_access_queries_6:
+    use_entities: true
+- find_altreg_queries_9:
+    use_entities: true
+entities: []
+slots:
+  open_feedback:
+    type: text
+    influence_conversation: true
+  open_rating:
+    type: text
+    influence_conversation: true
+responses: {}
+actions:
+- back_action_find_reg_query_buttons
+- action_submit_feedback
+- validate_survey_form
+- action_survey_submit
+- action_share_feedback_rating
+- action_share_feedback_comment
+- action_share_feedback_comment_result
+- action_share_feedback_final
+- action_find_nlu_fallback_response
+- action_find_genlogin_queries_info
+- action_find_genlogin_buttons
+- action_find_genreg_queries_info
+- action_find_altreg_queries_info
+- action_find_unenroll_queries_info
+- action_find_sec_queries_info
+- action_find_paym_queries_info
+- action_find_greet_1
+- action_find_greet_2
+- action_find_greet_3
+- action_find_reg_query_1
+- action_find_login_query_1
+- action_find_reg_query_buttons
+- action_find_genreg_query_buttons
+- action_find_altreg_query_buttons
+- action_find_unenroll_query_buttons
+- action_find_sec_query_buttons
+- action_find_paym_query_buttons
+- action_find_coursequery_query_buttons
+- action_find_finalexam_query_buttons
+- action_find_courseaccess_query_buttons
+- action_find_courseeval_query_buttons
+- action_find_coursecontent_query_buttons
+- action_find_tutorials_query_buttons
+- action_find_assignments_query_buttons
+- action_find_livelectures_query_buttons
+- action_find_certificate_query_buttons
+- action_find_deadline_query_buttons
+- action_find_access_query_buttons
+- action_find_gradeappeal_query_buttons
+- action_find_rulesreg_query_buttons
+- action_find_deferrals_query_buttons
+- action_find_login_reverse_query_1
+- action_find_login_reverse_query_2
+- action_find_genreg_reverse_query_1
+- action_find_genreg_reverse_query_2
+- action_find_altreg_reverse_query_1
+- action_find_altreg_reverse_query_2
+- action_find_unenroll_reverse_query_1
+- action_find_unenroll_reverse_query_2
+- action_find_sec_reverse_query_1
+- action_find_sec_reverse_query_2
+- action_find_paym_reverse_query_1
+- action_find_paym_reverse_query_2
+- action_find_courseinfo_query_1
+- action_find_courseinfo_query_2
+- action_find_courseinfo_query_3
+- action_find_all_course_info
+- action_find_course_reverse_1
+- action_find_course_reverse_2
+- action_find_finalexam_query_1
+- action_find_courseaccess_reverse_query_1
+- action_find_courseaccess_reverse_query_2
+- action_find_courseeval_reverse_query_1
+- action_find_courseeval_reverse_query_2
+- action_find_coursecontent_reverse_query_1
+- action_find_coursecontent_reverse_query_2
+- action_find_tutorials_reverse_query_1
+- action_find_tutorials_reverse_query_2
+- action_find_assignments_reverse_query_1
+- action_find_assignments_reverse_query_2
+- action_find_livelectures_reverse_query_1
+- action_find_livelectures_reverse_query_2
+- action_find_certificate_reverse_query_1
+- action_find_certificate_reverse_query_2
+- action_find_deadline_reverse_query_1
+- action_find_deadline_reverse_query_2
+- action_find_access_reverse_query_1
+- action_find_access_reverse_query_2
+- action_find_gradeappeal_reverse_query_1
+- action_find_gradeappeal_reverse_query_2
+- action_find_rulesreg_reverse_query_1
+- action_find_rulesreg_reverse_query_2
+- action_find_deferrals_reverse_query_1
+- action_find_deferrals_reverse_query_2
+- action_find_courseaccess_queries_info
+- action_find_courseeval_queries_info
+- action_find_coursecontent_queries_info
+- action_find_tutorials_queries_info
+- action_find_assignments_queries_info
+- action_find_livelectures_queries_info
+- action_find_certificate_queries_info
+- action_find_deadline_queries_info
+- action_find_access_queries_info
+- action_find_gradeappeal_queries_info
+- action_find_rulesreg_queries_info
+- action_find_deferrals_queries_info
+- action_find_course_query_1
+- action_find_goodbye_response
+- action_find_assignments_query_buttons_intro
+forms:
+  survey_form:
+    open_feedback:
+    - type: from_text
+  rating_form:
+    open_rating:
+    - type: from_text
+e2e_actions: []
